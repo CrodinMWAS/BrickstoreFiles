@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Brickstore"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -16,7 +17,22 @@
             <RowDefinition Height="10*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="txtSearchbar" Grid.Column="1" VerticalAlignment="Bottom" TextChanged="txtSearchbar_TextChanged"></TextBox>
+        <Label VerticalAlignment="Top">Generic searchbar: </Label>
+        <Label VerticalAlignment="Bottom">Filter by:</Label>
+        <TextBox x:Name="txtSearchbar" Grid.Column="1" VerticalAlignment="Top" TextChanged="txtSearchbar_TextChanged"></TextBox>
+        
+        <Label Width="25" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left">Id :</Label>
+        <TextBox x:Name="txtIdSearchbar" Margin="30 0 0 0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="200" TextChanged="txtIdSearchbar_TextChanged"></TextBox>
+        
+        <Label Width="50" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">Name :</Label>
+        <TextBox x:Name="txtNameSearchbar" Margin="255 0 0 0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" TextChanged="txtSearchbar_TextChanged"></TextBox>
+
+        <Label x:Name="lblCounter" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Foreground="Red"></Label>
+        
+        <Label Grid.Row="1" VerticalAlignment="Top">Category : </Label>
+        
+        <ComboBox x:Name="cboCategories" Grid.Row="1" Margin="20 50 20 50" Height="50" VerticalAlignment="Top" SelectionChanged="cboCategories_SelectionChanged"></ComboBox>
+
         <DataGrid x:Name="dgDisplay" Grid.Column="1" Grid.Row="1"></DataGrid>
     </Grid>
 </Window>

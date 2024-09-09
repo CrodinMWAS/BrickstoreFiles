@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nagy.martin.mark\\source\\repos\\WPF_Brickstore\\WPF_Brickstore\\WPF_Brickstore.csproj",
+      "projectUniqueName": "C:\\Users\\nagy.martin.mark\\Documents\\Brickstore\\BrickstoreFiles\\WPF_Brickstore\\WPF_Brickstore.csproj",
       "projectName": "WPF_Brickstore",
-      "projectPath": "C:\\Users\\nagy.martin.mark\\source\\repos\\WPF_Brickstore\\WPF_Brickstore\\WPF_Brickstore.csproj",
+      "projectPath": "C:\\Users\\nagy.martin.mark\\Documents\\Brickstore\\BrickstoreFiles\\WPF_Brickstore\\WPF_Brickstore.csproj",
       "packagesPath": "C:\\Users\\nagy.martin.mark\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nagy.martin.mark\\source\\repos\\WPF_Brickstore\\WPF_Brickstore\\obj\\",
+      "outputPath": "C:\\Users\\nagy.martin.mark\\Documents\\Brickstore\\BrickstoreFiles\\WPF_Brickstore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nagy.martin.mark\\AppData\\Roaming\\NuGet\\NuGet.Config",

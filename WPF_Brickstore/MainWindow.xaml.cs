@@ -21,6 +21,8 @@ namespace WPF_Brickstore
     public partial class MainWindow : Window
     {
         static ObservableCollection<Piece> pieces = new();
+        static List<String> categories = new();
+        static ObservableCollection<Piece> filtered = new();
         public MainWindow()
         {
             InitializeComponent();
@@ -31,6 +33,7 @@ namespace WPF_Brickstore
         {
             try
             {
+                categories.Add("Every Category");
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 if (openFileDialog.ShowDialog() == true)
                 {
@@ -44,8 +47,14 @@ namespace WPF_Brickstore
                         int quantity = Convert.ToInt32(elem.Element("Qty").Value);
                         Piece newPiece = new Piece(id, name, category, color, quantity);
                         pieces.Add(newPiece);
+                        if (!categories.Contains(category))
+                        {
+                            categories.Add(category);
+                        }
                     }
                     dgDisplay.ItemsSource = pieces;
+                    cboCategories.ItemsSource = categories;
+                    lblCounter.Content = pieces.Count;
                 }
             }
             catch (Exception e)
@@ -61,6 +70,8 @@ namespace WPF_Brickstore
             {
                 ObservableCollection<Piece> searchedPieces = new();
                 dgDisplay.ItemsSource = searchedPieces;
+                filtered.Clear();
+                cboCategories.SelectedIndex = 0;
                 if (Char.IsLetter(txtSearchbar.Text[0]))
                 {
                     foreach (var item in pieces)
@@ -85,6 +96,29 @@ namespace WPF_Brickstore
             else
             {
                 dgDisplay.ItemsSource = pieces;
+            }
+        }
+
+        private void cboCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cboCategories.SelectedItem.ToString() != "Every Category")
+            {
+                dgDisplay.ItemsSource = filtered;
+                foreach (var item in pieces)
+                {
+                    if (item.Category.ToLower().Contains(cboCategories.SelectedItem.ToString().ToLower()))
+                    {
+                        filtered.Add(item);
+                    }
+                }
+            }
+        }
+
+        private void txtIdSearchbar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtIdSearchbar.Text != "")
+            {
+                
             }
         }
     }

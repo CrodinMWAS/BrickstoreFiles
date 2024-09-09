@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WPF_Brickstore
-build_property.ProjectDir = C:\Users\nagy.martin.mark\source\repos\WPF_Brickstore\WPF_Brickstore\
+build_property.ProjectDir = C:\Users\nagy.martin.mark\Documents\Brickstore\BrickstoreFiles\WPF_Brickstore\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
